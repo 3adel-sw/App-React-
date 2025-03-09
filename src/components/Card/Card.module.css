@@ -1,0 +1,43 @@
+.cardWeapper {
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 500px;
+  padding: 10px;
+  line-height: 1.5;
+  margin: 10px;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  position: relative;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  color: white;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  border-radius: 50%;
+  padding: 5px;
+  transition: background-color 0.3s ease-in-out;
+  width: 24px;
+  height: 24px;
+  &:hover {
+    background-color: darkred;
+  }
+  cursor: pointer;
+}
+img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+/* >>>>>>>>>>>>>>> 14:50 Callback with set  */
