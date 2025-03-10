@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Card from "../Card/Card";
 import stylesApp from "../App/App.module.css";
+import { click } from "@testing-library/user-event/dist/click";
 
 function App() {
   const [state, setUserData] = useState([
@@ -42,12 +43,16 @@ function App() {
   ]);
     const deleteHandler = (e , idx ) => {
       // console.log(e.target.className, idx)
-      setUserData(state.filter((el , index) => index !== idx)) // remove the item with the index
-    }
+      // setUserData(state.filter((el , index) => index !== idx)) // remove the item with the index
+   setUserData((prevState) => {
+      return prevState.filter((el, index) => index !== idx);
+    });
+    // console.log(state);
+  };
   return (
     <div className={stylesApp.minContainer}>
       <h1>Data Boys</h1>
-      <Card namesList={state} type="men" deleteFunction={deleteHandler} />
+      <Card namesList={state} type="men" deleteFunction={deleteHandler}/>
     </div>
   );
 }
