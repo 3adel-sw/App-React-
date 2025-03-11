@@ -6,7 +6,7 @@ const Card = ({ namesList, type , deleteFunction }) => {
     <div
       className={styles.cardWeapper}
       key={idx}
-      style={{ backgroundColor: type === "men" ? "#fff" : "pink" }}
+      style= {{ backgroundColor: type === "men" ? "#fff" : "pink" }}
     >
       <div>Name:{name}</div>
       <div>Age: {age}</div>

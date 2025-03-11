@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Card from "../Card/Card";
 import stylesApp from "../App/App.module.css";
-import { click } from "@testing-library/user-event/dist/click";
+
 
 function App() {
+  const [cardToggele,setCardTogele] = useState(false)
   const [state, setUserData] = useState([
+
     {
       name: "Adel Mahmoud",
       age: 26,
@@ -14,17 +16,17 @@ function App() {
     },
     {
       name: "Hassan Mahmoud ",
-      age: 25,
+      age: 25,  
       country: "Egypt",
       job: "Marking",
-      phone: "01064620610",
+      phone: "01117607890",
     },
     {
       name: "Tahor Islam",
       age: 27,
       country: "Egypt",
       job: "Mobile",
-      phone: "01064620610",
+      phone: "01014919047",
     },
     {
       name: "Ibrahim Mahmoud",
@@ -42,8 +44,6 @@ function App() {
     },
   ]);
     const deleteHandler = (e , idx ) => {
-      // console.log(e.target.className, idx)
-      // setUserData(state.filter((el , index) => index !== idx)) // remove the item with the index
    setUserData((prevState) => {
       return prevState.filter((el, index) => index !== idx);
     });
@@ -52,7 +52,10 @@ function App() {
   return (
     <div className={stylesApp.minContainer}>
       <h1>Data Boys</h1>
+      <button style={{ marginBottom: "20px" }}>{cardToggele ? "Hide Names" : "Show Names"} </button>
+      <div className= {cardToggele ? "show" : "hide"}>
       <Card namesList={state} type="men" deleteFunction={deleteHandler}/>
+      </div>
     </div>
   );
 }

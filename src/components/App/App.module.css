@@ -6,3 +6,18 @@
   margin: 0 auto;
   flex-direction: column;
 }
+button {
+  cursor: pointer;
+  background-color: #8cc28e;
+  color: white;
+
+
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+
