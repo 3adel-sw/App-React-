@@ -4,7 +4,7 @@ import stylesApp from "../App/App.module.css";
 
 
 function App() {
-  const [cardToggele,setCardTogele] = useState(false)
+  const [cardToggle,setCardToggele] = useState(false);
   const [state, setUserData] = useState([
 
     {
@@ -49,11 +49,17 @@ function App() {
     });
     // console.log(state);
   };
+  const toggleHandler = () => {
+    setCardToggele(!cardToggle);
+    // console.log("clicked");
+  }
   return (
-    <div className={stylesApp.minContainer}>
+    <div className={stylesApp.minContainer} >
       <h1>Data Boys</h1>
-      <button style={{ marginBottom: "20px" }}>{cardToggele ? "Hide Names" : "Show Names"} </button>
-      <div className= {cardToggele ? "show" : "hide"}>
+      <button  style={{ marginBottom: "20px" , cursor: "pointer" ,backgroundColor: cardToggle ? 'red' : 'green' , borderRadius: "4px" }} onClick = {toggleHandler}> 
+        {cardToggle ? "Hide Names"  : "Show  Names"} 
+      </button>
+      <div className={cardToggle ? stylesApp.show : stylesApp.hide}>
       <Card namesList={state} type="men" deleteFunction={deleteHandler}/>
       </div>
     </div>
